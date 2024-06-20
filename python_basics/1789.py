@@ -1,17 +1,20 @@
 #수들의 합
-#다시풀기
 
 S=int(input())
-sum=0
-N=0
-i=0
-while i<1:
-    sum=(N+1)*(N)/2
-    if sum>S:
-        if (sum-S)>N:
-            print(N+1)
-        else:
-            print(N)
-        i+=1
-    else:
+sum=1
+N=1
+while 1:
+    sum=(N+1)*N/2
+    if S>=sum:
         N+=1
+    else:
+        sum=N*(N-1)/2
+        if (S-sum)<N:
+            N-=1
+        break
+print(N)
+
+#입력 숫자 S를 서로 다른 가장 많은 수로 더하려면, 작은 수부터 더해야함.
+#더한 값 sum이 S보다 커지기 전까지 반복하고, N값을 결정한다.
+#S에서 sum을 뺀 값이 N보다 크다면, 서로 다른 수를 더한 것이 되지만. 
+#그렇지 않다면, 가장 최근에 더한 값이 기존 더한 수와 중복되므로, N에서 1을 빼준다.
