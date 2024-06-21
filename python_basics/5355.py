@@ -4,7 +4,12 @@
 
 
 T=int(input())
-
+string=[]
+for i in range(T):
+    string[i].append(input())
+    string[i].replace(' ', '')
+#for i in range(T):
+#    result=string[i][0]
 
 
 '''
