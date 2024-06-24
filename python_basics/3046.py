@@ -1,4 +1,4 @@
-#R2 브론즈4
+#R2 [브론즈 4]
 
 R1, S=map(int, input().split())
 

@@ -1,4 +1,4 @@
-#A+B-2  브론즈5
+#A+B-2  [브론즈 5]
 
 A=int(input())
 B=int(input())

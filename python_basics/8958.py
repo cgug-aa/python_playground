@@ -1,4 +1,4 @@
-#OX 퀴즈
+#OX 퀴즈 [브론즈 2]
 
 T=int(input())
 for i in  range(T):

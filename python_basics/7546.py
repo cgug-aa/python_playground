@@ -1,4 +1,4 @@
-#그릇
+#그릇 [브론즈 2]
 
 stack=input()
 height=10

@@ -1,4 +1,4 @@
-#A+B-8
+#A+B-8 [브론즈 5]
 
 T=int(input())
 list=[]
