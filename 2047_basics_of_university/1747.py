@@ -1,19 +1,24 @@
 #소수&팰린드롬 [실버 1]
+#시간 초과 다시 풀기
 
 N=int(input())
-a=[]
-i=N
 while 1:
-    for j in range(1, i+1):
-        if i%j==0:
-            a.append(j)
-    if len(a)==2:
-        str_i=str(i)
-        list_i=list(str_i)
-        reverse_list_i=reversed(list_i)
-        if str_i==reverse_list_i:
-            print(i)
+    count=0
+    N+=1
+    for i in range(1, N+1):
+        if N%i==0:
+            count+=1
+    if count==2:
+        reversed_N=int(str(N)[::-1])
+        if N==reversed_N:
+            print(N)
             break
+        else:
+            pass
     else:
-        a=[]
-        i+=1
+        pass
+
+#정수 뒤집기, 문자열 뒤집기
+#   1)정수 뒤집기
+#       i) 슬라이싱 사용: [시작:끝:조건]
+#         
