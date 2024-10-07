@@ -68,3 +68,11 @@ b.print_heap()
 b.create_heap()
 print("최소힙: ")
 b.print_heap()
+
+#파이썬의 우선순위 큐를 위한 heapq 라이브러리
+# heapq.heappush(heap, item) : insert()메소드와 동일
+# heapq.heappop(heap)        : delete_min()메소드와 동일
+# heapq.heappushpop(heap, item): item 삽입 후 delete_min() 수행
+# heapq.heapify(x)           : create_heap() 메소드와 동일
+# heapq.heapreplace(heap, item): delete_min() 먼저 수행 후, item 삽입
+# 주의사항: 힙의 항목 수가 많아지면 이 연산들은 매우 비효율적이므로 사용 지양.
