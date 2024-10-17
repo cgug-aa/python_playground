@@ -1,6 +1,9 @@
 # 유기농 배추 [실버 2]
+
+import sys
+input=sys.stdin.readline
 # 테스트 횟수
-T=int(input())
+T=int(input().rstrip())
 
 # 카운팅 한 클러스터 지우기 -> 런타임 에러
 def remove(a, b, numpy_array):
