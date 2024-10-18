@@ -1,29 +1,26 @@
 # 프린터 큐 [실버 3]
 
 import sys
+from collections import deque
 input=sys.stdin.readline
 
 T=int(input().rstrip())
 for _ in range(T):
     N, M=map(int, input().split())
-    q=list(map(int, input().split()))
-    find=[False for _ in range(N)]
-    find[M]=True
+    q=deque(map(int, input().split()))
+    q=deque((i, idx) for idx, i in enumerate(q))
     count=1
     while len(q)>0:
-        if q[0]==max(q):
-            if find[0]:
+        if q[0][0]==max(q, key=lambda x:x[0])[0]:
+            if q[0][1]==M:
                 print(count)
                 break
             else:
                 count+=1
-            q.pop(0)
-            find.pop(0)
+            q.popleft()
         else:
-            tmp=q.pop(0)
-            q.append(tmp)
-            tmp=find.pop(0)
-            find.append(tmp)
+            q.append(q.popleft())
+            
 
 # 코드가 좀 짜친데.. 다른 방법은?
 # 개선 사항
