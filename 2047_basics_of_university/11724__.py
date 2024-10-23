@@ -7,10 +7,32 @@ input=sys.stdin.readline
 N, M=map(int, input().split())
 
 graph=[[] for _ in range(N+1)]
+visited=[False for _ in range(N+1)]
+
 for _ in range(M):
     u, v=map(int, input().split())
     graph[u].append(v)
     graph[v].append(u)
+
+def dfs(graph, v, visited):
+    visited[v]=True
+
+    for g in graph[v]:
+        if not visited[g]:
+            dfs(graph, g, visited)
+
+
+dfs(graph, 1, visited)
+count=1
+while visited.count(False)!=1:
+    for n in range(2, len(graph)):
+        if visited[n]==False:
+            dfs(graph, n, visited)
+            count+=1
+    
+print(count)
+
+# P) 런타임에러...
 
 
 '''
