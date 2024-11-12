@@ -1,14 +1,23 @@
 #회의실 배정 [실버 1]
 
-#아이디어: 회의 시작이 빠른 순서대로, 그 안에서 회의시간이 짧은 순서대로 나열하고 배정한다.
+#아이디어:
+# 회의가 끝나는 시간 순서대로 오름차순 정렬한다.
 
 import sys
 input=sys.stdin.readline
-print=sys.stdout.writelines
 
 N=int(input().rstrip())
+time_table=[]
 
-12345678
-1  4
-    5  8
-   45
+for _ in range(N):
+    meet=list(map(int, input().rstrip().split()))
+    time_table.append(meet)
+
+time_table.sort(key=lambda x:(x[1], x[0]))
+count=0
+prior=0
+for t in time_table:
+    if t[0]>=prior:
+        prior=t[1]
+        count+=1
+print(count)
