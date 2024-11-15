@@ -1,20 +1,16 @@
 # 요세푸스 문제 <실버5>
 
 import sys
+from collections import deque
+
 input=sys.stdin.readline
 
 N, K=map(int, input().split())
-nums=[True for _ in range(N)]
-count=0
+deq=deque(range(1, N+1))
 output=[]
-while True in nums:
-    for idx, n in enumerate(nums):
-        if n==True:
-            count+=1
-            if count==K:
-                nums[idx]=False
-                output.append(idx+1)
-                count=0
+while len(deq)!=0:
+    deq.rotate(-(K-1))
+    output.append(deq.popleft())
 
 output=str(output).replace('[', '<').replace(']', '>')
 print(output)
