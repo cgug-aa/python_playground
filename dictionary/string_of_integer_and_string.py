@@ -23,6 +23,15 @@ def solution(s):
 print(solution(s1))
 
 '''
+솔루션)
+def solution(s):
+    for key, value in nums.items():
+        s=s.replace(key, value)
+    return int(s)
+
+!!딕셔너리에 매몰되어 문자열을 잊지 말자!!
+
+---
 키-값의 딕셔너리를 만들 때, 값으로 키를 검색해야 하는 경우가 생긴다면
 
 sol1) [key for key, value in aa.items() if value == 'value']
